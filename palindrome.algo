@@ -1,0 +1,25 @@
+function isPalindrome(word: string): bool {
+    n := length(word)
+    if n <= 1 then
+        return true  // Empty word or single character is a palindrome
+    
+    for i := 0 to n / 2 do
+        if word[i] ≠ word[n - i - 1] then
+            return false  // Characters don't match, not a palindrome
+    
+    return true
+}
+
+VAR
+    word1 := "gag"
+    word2 := "kayak"
+    word3 := "php"
+    word4 := "radar"
+    word5 := "hello"
+BEGIN
+    print(isPalindrome(word1))  // Output: true
+    print(isPalindrome(word2))  // Output: true
+    print(isPalindrome(word3))  // Output: true
+    print(isPalindrome(word4))  // Output: true
+    print(isPalindrome(word5))  // Output: false
+END
